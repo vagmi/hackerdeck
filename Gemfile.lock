@@ -14,6 +14,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.4)
+    daemons (1.1.9)
+    eventmachine (1.0.0)
     httparty (0.10.0)
       multi_json (~> 1.0)
       multi_xml
@@ -34,6 +36,10 @@ GEM
       temple (~> 0.5.5)
       tilt (~> 1.3.3)
     temple (0.5.5)
+    thin (1.5.0)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     tilt (1.3.3)
     tzinfo (0.3.35)
 
@@ -48,3 +54,4 @@ DEPENDENCIES
   redcarpet
   sinatra
   slim
+  thin
