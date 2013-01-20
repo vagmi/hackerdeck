@@ -23,7 +23,7 @@ end
 
 helpers do
   def gist_id
-    @gist_id
+    params[:gist_id]
   end
   def encoded_uri
     CGI.escape("http://www.hackerdeck.net/#{@gist_id}")
