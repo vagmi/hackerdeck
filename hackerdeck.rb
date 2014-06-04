@@ -61,7 +61,7 @@ get '/:gist_id' do
     @user=@gist.username
     @replaced_content=@gist.processed
   else
-    @user = result["user"]["login"]
+    @user = result["owner"]["login"]
     slim_file=result["files"]["slides.slim"]
     unless slim_file
       redirect '/not_found'
@@ -80,7 +80,7 @@ get '/:gist_id' do
         @gist=Gist.create({:content=>slim_content,
                            :gist_number=>params[:gist_id], 
                            :etag=>result.headers["etag"], 
-                           :username=>result["user"]["login"],
+                           :username=>result["owner"]["login"],
                            :processed=>@replaced_content})
       end
     rescue Exception => e
